@@ -1,11 +1,19 @@
-import logo from './logo.svg';
+import { Link } from 'react-router-dom';
 import './App.css';
+import About from './pages/About';
+import Header from './components/Header';
+
 
 function App() {
+
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="main-container">
+      <Header />
+    <main w->
+      
+
+    </main>
+    </div>
   );
 }
 
