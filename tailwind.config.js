@@ -5,12 +5,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamiy: {
+        "fatface": ["Abril FatFace", "sans-serif"]
+      },
       height: {
         '100': '100px',
-        '120': '120px'
+        '120': '120px',
+        "80%": "80%",
       },
       width: {
         "70%": "70%",
+        "80%": "80%",
         "85%": "85%",
         "60%": "60%",
         "50%": "50%",
