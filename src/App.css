@@ -14,17 +14,27 @@
     @apply flex items-center justify-around w-85% h-100 bg-gradient-to-r from-sky-700 to-sky-300 rounded-full my-8 
   }
 
+  .title-and-image {
+    @apply flex justify-start w-50% items-center
+  }
 
   .national-park-title {
-      @apply text-5xl text-white p-4 mt-2 w-50%
+      @apply text-4xl text-white p-4 mt-2 
+  }
+
+  .map-image {
+    @apply h-8 w-8 mb-5px
   }
 
   .magnifying-glass {
     /* @apply ml-80 w-9 */
   }
 
+  .form-div {
+    @apply w-30%
+  }
   .form {
-    @apply w-40% flex justify-around
+    @apply w-full flex justify-around
   }
   .header-input {
     @apply w-full text-lg items-center text-center h-8 rounded-full text-indigo-900 leading-normal focus:outline-none 
@@ -37,7 +47,7 @@
   
 
   .main-card {
-    @apply flex justify-center h-80% w-85% bg-slate-100 rounded-xl p-8
+    @apply flex justify-center h-80% w-85% bg-sky-900 rounded-xl p-8
   }
 }
 

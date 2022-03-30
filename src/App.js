@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -10,7 +10,7 @@ import axios from 'axios';
 function App(props) {
 
   const [parks, setParks] = useState([]);
-  const [state, setState] = useState('')
+  const state = useRef(null)
 
   useEffect(() => {
     (async () => {
@@ -27,7 +27,7 @@ function App(props) {
 
   return (
     <div className="main-container">
-      <Header />
+      <Header state={state} setPark={setParks}/>
       <div className="main-card">
         <MainCard data={parks} />
       </div>
