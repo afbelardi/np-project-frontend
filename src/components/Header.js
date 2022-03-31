@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import axios from 'axios';
 
-function Header({ state, setPark }) {
+function Header({ state, setParks }) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             const response = await axios.get(`http://localhost:8000/api/nationalpark/apikey/${state.current.value}`)
             const data = response.data
-            setPark(data.data)
+            setParks(data.data)
         } catch(error) {
             console.error(error)
         }

@@ -1,5 +1,5 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap');
 
 html {
   height: 100vh;
@@ -9,7 +9,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  font-family: 'Ramaraja', serif;
+  font-family: 'Oranienbaum', serif;
 
 }
 

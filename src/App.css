@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
 
 @layer components {
   /* HEADER COMPONENT */
@@ -19,22 +20,22 @@
   }
 
   .national-park-title {
-      @apply text-4xl text-white p-4 mt-2 
+      @apply text-4xl text-white p-4 
   }
 
   .map-image {
     @apply h-8 w-8 mb-5px
   }
+  .form-div {
+    @apply w-30% 
+  }
 
   .magnifying-glass {
-    /* @apply ml-80 w-9 */
+    @apply mt-1 w-6 h-6 
   }
-
-  .form-div {
-    @apply w-30%
-  }
+  
   .form {
-    @apply w-full flex justify-around
+    @apply w-full flex space-x-2.5
   }
   .header-input {
     @apply w-full text-lg items-center text-center h-8 rounded-full text-indigo-900 leading-normal focus:outline-none 

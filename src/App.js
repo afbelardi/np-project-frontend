@@ -27,9 +27,9 @@ function App(props) {
 
   return (
     <div className="main-container">
-      <Header state={state} setPark={setParks}/>
+      <Header state={state} setParks={setParks}/>
       <div className="main-card">
-        <MainCard data={parks} />
+        <MainCard data={parks} setParks={setParks} />
       </div>
     </div>
   );
