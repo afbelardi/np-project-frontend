@@ -20,7 +20,7 @@
   }
 
   .national-park-title {
-      @apply text-4xl text-white p-4 
+      @apply text-5xl text-white p-4 
   }
 
   .map-image {
@@ -50,5 +50,28 @@
   .main-card {
     @apply flex justify-center h-80% w-85% bg-sky-900 rounded-xl p-8
   }
+
+
+
+
+
+
+  /* SHOW PAGE */
+
+  .show-page-container {
+    @apply bg-gray-800 h-screen flex flex-col justify-center items-center h-screen
+ }
+
+ .show-page-title {
+   @apply text-white text-5xl mt-4 mb-10
+ }
+
+ .image-container {
+   @apply flex overflow-scroll
+ }
+
+ .show-image {
+   @apply max-w-md max-h-96 rounded-xl ml-4
+ }
 }
 

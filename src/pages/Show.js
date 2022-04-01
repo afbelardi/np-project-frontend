@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import '../pages/show.css';
+import '../App.css';
 import { useParams } from 'react-router-dom';
 
 const Show = (props) => {
@@ -19,16 +19,28 @@ const [park, setPark] = useState({})
             try {
                 const response = await fetch(`http://localhost:8000/api/nationalpark/apikey/park/${id}`);
                 const data = await response.json()
-                console.log(data)
+                setPark(data.data[0]);
+                setImage(data.data[0].images);
+                setEntranceFees(data.data[0].entranceFees);
+                setActivities(data.data[0].activities);
             } catch(error) {
                 console.error(error)
             }
         })()
-    })
+    }, [])
 
   return (
     <div className="show-page-container">
-        <title>{id}</title>
+        <h1 className="show-page-title">{park.fullName}</h1>
+        <div className="main-card">
+            <div className="image-container">
+                {image.map(image => {
+                    return (
+                        <img className="show-image" src={image.url} />
+                    )
+                })}
+            </div>
+        </div>
     </div>
   )
 }

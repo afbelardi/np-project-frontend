@@ -40,7 +40,7 @@ export default function MainCard(props) {
         {Object.keys(props.data).length
             ? props.data.map(park => {
                 return(
-        <div className="max-w-xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-8 ">
+        <div className="max-w-4xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-8 ">
                     <a href="#">
                         <img className="rounded-t-lg w-full" src={park.images[0].url} alt="" />
                      </a>
