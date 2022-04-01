@@ -41,9 +41,9 @@ export default function MainCard(props) {
             ? props.data.map(park => {
                 return(
         <div className="max-w-4xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-8 ">
-                    <a href="#">
+                    <Link to={`/park/${park.parkCode}`}> 
                         <img className="rounded-t-lg w-full" src={park.images[0].url} alt="" />
-                     </a>
+                     </Link>
                     <div className="p-5">
                         <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{park.fullName}</h5>
