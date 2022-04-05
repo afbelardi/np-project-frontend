@@ -29,6 +29,8 @@ const [park, setPark] = useState({})
         })()
     }, [])
 
+   
+
   return (
     <div className="show-page-container">
         <h1 className="show-page-title">{park.fullName}</h1>
@@ -40,14 +42,17 @@ const [park, setPark] = useState({})
                     )
                 })}
             </div>
-            <div className="description-container">
-                <p className="description">{park.description}</p>
+            <div className="around-description">
+                <div className="description-container">
+                    <p className="description">{park.description}</p>
+                </div>
             </div>
+            <div className="around-price">
             <div className="price-container">
                 {entranceFees.map(fee => {
                     return(
                         <div className="entrance-fees">
-                            <div>
+                            <div className="divide-y divide-slate-800">
                                 <p>${fee.cost}</p>
                                 <p>{fee.title}</p>
                             </div>
@@ -55,8 +60,10 @@ const [park, setPark] = useState({})
                                 <p>{fee.description}</p>
                             </div>
                         </div>
+                        
                     )
                 })}
+                </div>
             </div>
         </div>
     </div>
