@@ -65,6 +65,12 @@ const [park, setPark] = useState({})
                 })}
                 </div>
             </div>
+            <div className="weather-container">
+                <div className="weather">
+                    <h1 className="text-center text-white mb-4 text-3xl">Weather Information</h1>
+                    <p className="description">{park.weatherInfo}</p>
+                </div>
+            </div>
         </div>
     </div>
   )

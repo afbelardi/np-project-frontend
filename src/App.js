@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import MainCard from './components/MainCard';
 import axios from 'axios';
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
 
 
 
@@ -31,6 +32,11 @@ function App(props) {
       <div className="main-card">
         <MainCard data={parks} setParks={setParks} />
       </div>
+      <ScrollUpButton
+          EasingType="easeInExpo"
+          ShowAtPosition={181}
+          AnimationDuration={605}
+        />
     </div>
   );
 }

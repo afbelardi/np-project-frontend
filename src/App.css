@@ -63,7 +63,7 @@
  }
 
  .show-card {
-  @apply flex flex-col justify-items-start h-full w-85% bg-sky-900 rounded-xl p-8 mb-8
+  @apply flex flex-col justify-items-start h-full w-85% bg-sky-900 rounded-xl p-8 mb-12
  }
 
  .show-page-title {
@@ -87,7 +87,7 @@
  }
 
  .description {
-   @apply text-white text-center
+   @apply text-white text-center text-lg
  }
 
  /* .entrance-fees {
@@ -104,6 +104,14 @@
 
  .entrance-fees {
    @apply mb-4
+ }
+
+ .weather-container {
+   @apply flex justify-center
+ }
+
+ .weather {
+   @apply mt-8 max-w-60% flex flex-col justify-center
  }
 
  
