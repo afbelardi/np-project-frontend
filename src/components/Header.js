@@ -3,6 +3,7 @@ import '../App.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import axios from 'axios';
+import ButtonMenu from '../components/ButtonMenu';
 
 function Header({ state, setParks }) {
 
@@ -24,6 +25,7 @@ function Header({ state, setParks }) {
             <h1 className="national-park-title font-fatface">National Park Finder</h1>
             <img className="map-image" src="/map.png" />
         </div>
+      
         <div className="form-div">
             <form className="form" onSubmit={handleSubmit}>
             <FontAwesomeIcon icon={faMagnifyingGlass} className="magnifying-glass"/>
@@ -35,6 +37,7 @@ function Header({ state, setParks }) {
                 />
             </form>
         </div>
+        <ButtonMenu />
     </div>
   )
 }
