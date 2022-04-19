@@ -1,5 +1,6 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
+import { Link } from 'react-router-dom';
 
 const Dropdown = ({ color }) => {
   // dropdown props
@@ -27,7 +28,7 @@ const Dropdown = ({ color }) => {
           <div className="relative inline-flex align-middle w-full">
             <button
               className={
-                "text-white font-bold uppercase text-sm px-6 py-3 rounded shadow bg-blue-600 hover:shadow-xl outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 " +
+                "text-white font-bold uppercase text-sm px-6 py-3 rounded-full shadow bg-blue-600 hover:shadow-xl outline-none focus:outline-none mr-1  ease-linear transition-all duration-150 " +
                 bgColor
               }
               type="button"
@@ -44,20 +45,13 @@ const Dropdown = ({ color }) => {
               ref={popoverDropdownRef}
               className={
                 (dropdownPopoverShow ? "block " : "hidden ") +
-                "mt-6 text-base z-50 bg-blue-600 float-left py-2 list-none text-left rounded shadow-xl mt-1"
+                "mt-6 text-base z-50 bg-blue-600 float-left py-2 list-none text-left rounded-xl shadow-xl mt-1"
               }
               style={{ minWidth: "12rem" }}
             >
-              <a
-                href="#pablo"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-blue-600 " +
-                  (color === "white" ? " text-slate-700" : "text-white")
-                }
-                onClick={e => e.preventDefault()}
-              >
-                Action
-              </a>
+            <Link to={`/favorites`} className="text-sm text-white py-2 px-4 font-normal block w-full whitespace-nowrap bg-blue-600 ">
+                Favorites
+              </Link>
               <a
                 href="#pablo"
                 className={

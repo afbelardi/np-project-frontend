@@ -10,7 +10,7 @@ function Header({ state, setParks }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.get(`http://localhost:8000/api/nationalpark/apikey/${state.current.value}`)
+            const response = await axios.get(`https://national-park-backend.herokuapp.com/api/nationalpark/apikey/${state.current.value}`)
             const data = response.data
             setParks(data.data)
         } catch(error) {

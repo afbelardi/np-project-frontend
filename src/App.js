@@ -16,7 +16,7 @@ function App(props) {
   useEffect(() => {
     (async () => {
       try{
-        const response = await axios.get(`http://localhost:8000/api/nationalpark/apikey`);
+        const response = await axios.get(`https://national-park-backend.herokuapp.com/api/nationalpark/apikey`);
         const data = await response.data
         setParks(data.data)
       } catch(error) {

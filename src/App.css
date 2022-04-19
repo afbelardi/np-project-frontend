@@ -12,7 +12,7 @@
   }
 
   .header-div {
-    @apply flex items-center justify-around w-85% h-100 bg-gradient-to-r from-sky-700 to-sky-300 rounded-full my-8 
+    @apply flex items-center justify-around w-85% h-100 bg-gradient-to-r from-sky-700 to-sky-300 rounded-full my-8 shadow-2xl
   }
 
   .title-and-image {
@@ -48,7 +48,7 @@
   
 
   .main-card {
-    @apply flex justify-center h-80% w-85% bg-sky-900 rounded-xl p-8
+    @apply flex justify-center h-80% w-85% bg-sky-900 rounded-xl p-8 shadow-2xl
   }
 
 
@@ -90,9 +90,6 @@
    @apply text-white text-center text-lg
  }
 
- /* .entrance-fees {
-   @apply max-w-60% mt-12
- } */
 
  .around-price {
    @apply flex justify-center
@@ -112,6 +109,15 @@
 
  .weather {
    @apply mt-8 max-w-60% flex flex-col justify-center
+ }
+
+
+
+
+ /* FAVORITES PAGE */
+
+ .favorite-page-container {
+  @apply bg-gray-800 min-h-screen flex flex-col items-center overflow-scroll
  }
 
  

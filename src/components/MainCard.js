@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export default function MainCard(props) {
 
     const handleSubmit = async (park) => {
 		try {
-			const response = await fetch('http://localhost:8000/api/nationalpark/favorites', {
+			const response = await fetch('https://national-park-backend.herokuapp.com/api/nationalpark/favorites', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -32,6 +32,7 @@ export default function MainCard(props) {
 			console.error(error);
 		} 
 	};
+
 
 
 

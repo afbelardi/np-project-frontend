@@ -17,7 +17,7 @@ const [park, setPark] = useState({})
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/nationalpark/apikey/park/${id}`);
+                const response = await fetch(`https://national-park-backend.herokuapp.com/api/nationalpark/apikey/park/${id}`);
                 const data = await response.json()
                 setPark(data.data[0]);
                 setImage(data.data[0].images);
