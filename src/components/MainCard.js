@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Bounce from 'react-reveal';
 
 
 
@@ -41,6 +42,7 @@ export default function MainCard(props) {
         {Object.keys(props.data).length
             ? props.data.map(park => {
                 return(
+            <Bounce>
         <div className="max-w-4xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-8 ">
                     <Link to={`/park/${park.parkCode}`}> 
                         <img className="rounded-t-lg w-full" src={park.images[0].url} alt="" />
@@ -62,6 +64,7 @@ export default function MainCard(props) {
                         </a>
                     </div>
                     </div>
+                    </Bounce>
                 )
         })
         : '' }

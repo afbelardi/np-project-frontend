@@ -5,12 +5,15 @@ import Header from './components/Header';
 import MainCard from './components/MainCard';
 import axios from 'axios';
 import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
+import { Oval } from 'react-loading-icons';
+
 
 
 
 function App(props) {
 
   const [parks, setParks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const state = useRef(null)
 
   useEffect(() => {
@@ -18,7 +21,8 @@ function App(props) {
       try{
         const response = await axios.get(`https://national-park-backend.herokuapp.com/api/nationalpark/apikey`);
         const data = await response.data
-        setParks(data.data)
+        setParks(data.data);
+        setIsLoading(!isLoading);
       } catch(error) {
         console.error(error)
       }
@@ -26,8 +30,13 @@ function App(props) {
   }, [state]);
 
 
-  return (
-    <div className="main-container">
+      if(!isLoading) {
+        return (
+         <Oval />
+        )
+      } else {
+        return (
+          <div className="main-container">
       <Header state={state} setParks={setParks}/>
       <div className="main-card">
         <MainCard data={parks} setParks={setParks} />
@@ -38,7 +47,9 @@ function App(props) {
           AnimationDuration={605}
         />
     </div>
+    
   );
-}
+    }
+  }
 
 export default App;
