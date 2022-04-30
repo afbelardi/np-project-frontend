@@ -49,19 +49,12 @@ const Dropdown = ({ color }) => {
               }
               style={{ minWidth: "12rem" }}
             >
+            <Link to={`/login`} className="text-sm text-white py-2 px-4 font-normal block w-full whitespace-nowrap bg-blue-600 ">
+                Login
+            </Link>
             <Link to={`/favorites`} className="text-sm text-white py-2 px-4 font-normal block w-full whitespace-nowrap bg-blue-600 ">
                 Favorites
               </Link>
-              <a
-                href="#pablo"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-slate-700" : "text-white")
-                }
-                onClick={e => e.preventDefault()}
-              >
-                Another action
-              </a>
               <a
                 href="#pablo"
                 className={

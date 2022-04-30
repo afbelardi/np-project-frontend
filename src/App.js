@@ -32,7 +32,15 @@ function App(props) {
 
       if(!isLoading) {
         return (
-         <Oval />
+        <div className="bg-gray-800 h-screen flex justify-center items-center">
+          < Oval 
+          stroke="#06bcee" 
+          className="svg-loaders-svg"
+          viewBox="0 0 38 38"
+          height={400} 
+          width={400}
+          />
+        </div>
         )
       } else {
         return (
