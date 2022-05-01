@@ -63,7 +63,7 @@ const Dropdown = ({ color }) => {
                 }
                 onClick={e => e.preventDefault()}
               >
-                Something else here
+                Register
               </a>
               <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
               <a
@@ -74,7 +74,7 @@ const Dropdown = ({ color }) => {
                 }
                 onClick={e => e.preventDefault()}
               >
-                Seprated link
+                Log Out
               </a>
             </div>
           </div>
