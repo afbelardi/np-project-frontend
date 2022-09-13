@@ -20,25 +20,25 @@
   }
 
   .national-park-title {
-      @apply text-5xl text-white p-4 
+      @apply text-5xl text-white p-4 sm:text-xl sm:flex sm:justify-center 
   }
 
   .map-image {
-    @apply h-8 w-8 mb-5px
+    @apply h-8 w-8 mb-5px sm:hidden
   }
   .form-div {
     @apply w-30% 
   }
 
   .magnifying-glass {
-    @apply mt-1 w-6 h-6 
+    @apply mt-1 w-6 h-6 sm:hidden
   }
   
   .form {
     @apply w-full flex space-x-2.5
   }
   .header-input {
-    @apply w-full text-lg items-center text-center h-8 rounded-full text-indigo-900 leading-normal focus:outline-none 
+    @apply w-full text-lg items-center text-center h-8 rounded-full text-indigo-900 leading-normal focus:outline-none sm:w-80%
   }
 
   ::placeholder {

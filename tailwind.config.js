@@ -4,6 +4,10 @@ module.exports = {
     
   ],
   theme: {
+    screens: {
+      'sm': "500px",
+      "md": "740px",
+    },
     extend: {
       fontFamiy: {
         "fatface": ["Abril FatFace", "sans-serif"]

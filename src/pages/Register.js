@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 export default function Register() {
 
@@ -8,9 +8,14 @@ export default function Register() {
     const password = useRef(null);
     const password2 = useRef(null);
 
+    const [wrongPassword, checkWrongPassword] = useState(false);
+
     const handleRegister = async (e) => {
         try {
-        const response = await fetch(`http://localhost:8000/api/users/register`, {
+            if (password.current.value !== password2.current.value) {
+              checkWrongPassword(true);
+            } else {
+                const response = await fetch(`http://localhost:8000/api/users/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,7 +28,10 @@ export default function Register() {
             })
         })
         const data = await response.json();
+        checkWrongPassword(false);
         console.log(data);
+            }
+        
         } catch(error) {
             console.error(error);
         }
@@ -31,46 +39,51 @@ export default function Register() {
 
   return (
     <div className="bg-gray-800 h-screen flex justify-center items-center">
-    <div class="w-full max-w-xs">
-  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-  <div class="mb-4">
-      <label class="text-gray-700 text-sm font-bold mb-2">
+    <div className="w-full max-w-xs">
+  <form className="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+  <div className="mb-4">
+      <label className="text-gray-700 text-sm font-bold mb-2">
         Name
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={name}  placeholder="Name" />
+      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={name}  placeholder="Name" />
     </div>
-    <div class="mb-4">
-      <label class="text-gray-700 text-sm font-bold mb-2">
+    <div className="mb-4">
+      <label className="text-gray-700 text-sm font-bold mb-2">
         Email
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={email} placeholder="Email" />
+      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={email} placeholder="Email" />
     </div>
-    <div class="mb-4">
-      <label class="text-gray-700 text-sm font-bold mb-2">
+    <div className="mb-4">
+      <label className="text-gray-700 text-sm font-bold mb-2">
         Username
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={username} placeholder="Username" />
+      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={username} placeholder="Username" />
     </div>
-    <div class="mb-4">
-      <label class="text-gray-700 text-sm font-bold mb-2">
+    <div className="mb-4">
+      <label className="text-gray-700 text-sm font-bold mb-2">
         Password
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={password} type="password" placeholder="******************" />
+      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={password} type="password" placeholder="******************" />
     </div>
-    <div class="mb-6">
-      <label class="block text-gray-700 text-sm font-bold mb-2">
+    <div className="mb-6">
+      <label className="block text-gray-700 text-sm font-bold mb-2">
         Confirm Password
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" ref={password2} type="password" placeholder="******************" / >
+      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" ref={password2} type="password" placeholder="******************" / >
       {/* <p class="text-red-500 text-xs italic">Please choose a password.</p> */}
     </div>
-    <div class="flex items-center justify-between">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={handleRegister} type="button">
-        Sign In
+    {wrongPassword ? (
+      <div>The password does not match!</div>
+    ) :
+    ''
+  }
+    <div className="flex items-center justify-between">
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={handleRegister} type="button">
+        Register
       </button>
-      <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+      {/* <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
         Forgot Password?
-      </a>
+      </a> */}
     </div>
   </form>
 </div>
