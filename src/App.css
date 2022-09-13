@@ -20,18 +20,18 @@
   }
 
   .national-park-title {
-      @apply text-5xl text-white p-4 sm:text-xl sm:flex sm:justify-center 
+      @apply text-5xl text-white p-4 sm:text-xl md:text-2xl lg:text-4xl
   }
 
   .map-image {
-    @apply h-8 w-8 mb-5px sm:hidden
+    @apply h-8 w-8 mb-5px sm:hidden md:block
   }
   .form-div {
     @apply w-30% 
   }
 
   .magnifying-glass {
-    @apply mt-1 w-6 h-6 sm:hidden
+    @apply mt-1 w-6 h-6 sm:hidden md:block
   }
   
   .form {
