@@ -13,12 +13,13 @@ export default function Register() {
     const [wrongPassword, checkWrongPassword] = useState(false);
     const [usernameTaken, checkUsernameTaken] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
+    const [responseStatus, setResponseStatus] = useState(Number);
 
     const handleRegister = async (e) => {
         try {
             if (password.current.value !== password2.current.value) {
               checkWrongPassword(true);
-              toast("Passwords do not match")
+              toast.error("Passwords do not match")
             } else {
                 const response = await fetch(`http://localhost:8000/api/users/register`, {
             method: 'POST',
@@ -35,6 +36,8 @@ export default function Register() {
         const data = await response.json();
         checkWrongPassword(false);
         setResponseMessage(data.message)
+        setResponseStatus(data.status);
+        console.log(responseStatus)
            }
          
         } catch(error) {
@@ -43,7 +46,12 @@ export default function Register() {
     };
 
     const notify = () => {
-      toast(`${responseMessage}`)
+      if (responseStatus === 200) {
+        toast.success(`${responseMessage}`)
+      } else {
+        toast.error(`${responseMessage}`)
+      }
+      
     }
   
 
